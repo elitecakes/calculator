@@ -44,6 +44,8 @@ function typeSymbol (button) {
 function screenToArray (screenString) {
     let equationArray = screenString.split(' ');
     console.log(equationArray);
+    return equationArray;
+    
 };
 
 function clearScreen () {
@@ -52,19 +54,19 @@ function clearScreen () {
     //need to clear the old evaluation array as well
 };
 
-function add(num1, num2) {
+function addFunc(num1, num2) {
     return num1 + num2;
 };
 
-function subtract(num1, num2) {
+function subtractFunc(num1, num2) {
     return num1 - num2;
 };
 
-function multiply(num1, num2) {
+function multiplyFunc(num1, num2) {
     return num1 * num2;
 }; 
 
-function divide(num1, num2) {
+function divideFunc(num1, num2) {
     return num1 / num2;
     //need to limit amount of decimal places
 }
@@ -76,7 +78,11 @@ function evaluateArray (equationArray) {
 
     for (let i = 0; i < equationArray.length; i++) {
         if (equationArray[i] === '*') {
-
+            let answer = multiplyFunc(equationArray[i -1], equationArray[i +1]);
+            console.log(answer);
+            equationArray.splice(i+2, 0, answer);
+            equationArray.splice(i-1, 3);
+            console.log(equationArray);
         }
         else if (equationArray[i] === '/') {
             
@@ -99,7 +105,8 @@ funcButtons.forEach(item => item.addEventListener('click', function () {
 }));
 
 equals.addEventListener('click', function () {
-    screenToArray(screenNumber);
+    evaluateArray(screenToArray(screenNumber));
+    
 });
 
 clear.addEventListener('click', clearScreen);
