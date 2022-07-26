@@ -28,6 +28,8 @@ function typeNum (button) {
     console.log(buttonNum);
 };
 
+//try and make it work if you keep clicking on stuff
+
 var myEquation = [];
 function typeSymbol (button) {
     //TODO
@@ -82,9 +84,12 @@ function evaluateArray (equationArray) {
     equationArray.push("")
     if (!isNaN(equationArray[1])) {
         console.log(equationArray + "done with function");
-        return equationArray;
+        display.innerText = equationArray[0];
+        let ans = String(equationArray[0]);
+        return ans;
         
     }
+
     for (let i = 0; i < equationArray.length; i++) {
         if (equationArray[i] === '*') {
             let answer = multiplyFunc(equationArray[i -1], equationArray[i +1]);
@@ -103,6 +108,10 @@ function evaluateArray (equationArray) {
             evaluateArray(equationArray);
         }
         else if (equationArray[i] === '+') {
+            /*if ("*" in equationArray) {
+                console.log("theres a multiply")
+                continue;
+            }*/
             let answer = addFunc(equationArray[i -1], equationArray[i +1]);
             console.log(answer);
             equationArray.splice(i+2, 0, answer);
@@ -132,7 +141,7 @@ funcButtons.forEach(item => item.addEventListener('click', function () {
 }));
 
 equals.addEventListener('click', function () {
-    evaluateArray(screenToArray(screenNumber));
+    screenNumber = evaluateArray(screenToArray(screenNumber));
     
 });
 
