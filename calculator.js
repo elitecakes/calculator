@@ -49,25 +49,25 @@ function screenToArray (screenString) {
 };
 
 function clearScreen () {
-    screenNumber = ' ';
+    screenNumber = '';
     display.innerText = screenNumber;
     //need to clear the old evaluation array as well
 };
 
 function addFunc(num1, num2) {
-    return num1 + num2;
+    return +num1 + +num2;
 };
 
 function subtractFunc(num1, num2) {
-    return num1 - num2;
+    return +num1 - +num2;
 };
 
 function multiplyFunc(num1, num2) {
-    return num1 * num2;
+    return +num1 * +num2;
 }; 
 
 function divideFunc(num1, num2) {
-    return num1 / num2;
+    return +num1 / +num2;
     //need to limit amount of decimal places
 }
 
@@ -76,6 +76,15 @@ function evaluateArray (equationArray) {
     //check for equation ending in *+-/
     //check for equation starting on */
 
+    //if array is less than or equal to 2, thats the answer
+    equationArray.push("")
+    equationArray.push("")
+    equationArray.push("")
+    if (!isNaN(equationArray[1])) {
+        console.log(equationArray + "done with function");
+        return equationArray;
+        
+    }
     for (let i = 0; i < equationArray.length; i++) {
         if (equationArray[i] === '*') {
             let answer = multiplyFunc(equationArray[i -1], equationArray[i +1]);
@@ -83,16 +92,34 @@ function evaluateArray (equationArray) {
             equationArray.splice(i+2, 0, answer);
             equationArray.splice(i-1, 3);
             console.log(equationArray);
+            evaluateArray(equationArray);
         }
         else if (equationArray[i] === '/') {
-            
+            let answer = divideFunc(equationArray[i -1], equationArray[i +1]);
+            console.log(answer);
+            equationArray.splice(i+2, 0, answer);
+            equationArray.splice(i-1, 3);
+            console.log(equationArray);
+            evaluateArray(equationArray);
         }
         else if (equationArray[i] === '+') {
-            
+            let answer = addFunc(equationArray[i -1], equationArray[i +1]);
+            console.log(answer);
+            equationArray.splice(i+2, 0, answer);
+            equationArray.splice(i-1, 3);
+            console.log(equationArray);
+            evaluateArray(equationArray);
         }
         else if (equationArray[i] === '-') {
-            
+            let answer = subtractFunc(equationArray[i -1], equationArray[i +1]);
+            console.log(answer);
+            equationArray.splice(i+2, 0, answer);
+            equationArray.splice(i-1, 3);
+            console.log(equationArray);
+            evaluateArray(equationArray);
         }
+    // make this recursive so it keeps looking for simple equations
+    //solves them and returns the answer
     }
 }
 
