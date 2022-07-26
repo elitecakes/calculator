@@ -17,6 +17,7 @@ body {
     align-items: center;
     padding: 15px;
     border-radius: 5px;
+    gap: 15px;
     
     
 }
@@ -26,8 +27,7 @@ body {
     flex-grow: 1;
     flex-basis: 0;
     height: auto;
-    width: 90%;
-    padding: 25px;
+    width: 100%;
     justify-content: space-around;
     
 }
@@ -100,4 +100,5 @@ body {
     filter: grayscale(100%);
     opacity: 25%;
     cursor: not-allowed;
+    pointer-events: none;
 }
