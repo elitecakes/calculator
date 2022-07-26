@@ -1,0 +1,103 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+
+}
+.background {
+    height: 600px;
+    width: 100px;
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1;
+    flex-basis: 400px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 5px;
+    
+    
+}
+
+.screenContainer {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+    height: auto;
+    width: 90%;
+    padding: 25px;
+    justify-content: space-around;
+    
+}
+
+.screen {
+    background-color: rgba(17, 110, 20, 0.466);
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 12px;
+    font-size: 36px;
+    /*find digital font*/
+}
+
+.buttonContainer {
+    display: flex;
+    /*flex: 5;*/
+    flex-grow: 1;
+    flex-basis: 0;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.button {
+    /*height: 80px;
+    width: 80px;*/
+    flex: 1 0 21%;
+    border-style: none;
+    border-radius: 10px;
+    font-size: 24px;
+}
+
+.func {
+    background-color:sandybrown;
+    font-size: 15px;
+}
+
+.func:hover {
+    background-color: rgba(255, 115, 0, 0.753); 
+}
+
+.buttonGrid {
+    align-self: center;
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    width: 400px;
+    height: 400px;
+}
+
+.bottomContainer {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    justify-content: space-around;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.equals {
+    flex: 3;
+}
+
+.outoforder {
+    filter: grayscale(100%);
+    opacity: 25%;
+    cursor: not-allowed;
+}
