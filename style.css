@@ -6,7 +6,7 @@ body {
 
 }
 .background {
-    height: 600px;
+    height: 650px;
     width: 100px;
     background-color: lightgrey;
     display: flex;
@@ -41,7 +41,27 @@ body {
     justify-content: flex-end;
     padding: 12px;
     font-size: 36px;
+    
+
+    display: flex;
+    flex-direction:column-reverse;
+    justify-content: space-around;
+    align-items: flex-end;
+
     /*find digital font*/
+}
+
+.upperScreen {
+    /*background-color: green;*/
+    background-color: none;
+    border-radius: 15px;
+    width: 100%;
+    text-align: right;
+    font-size: 29px;
+}
+
+.lowerScreen {
+    min-height: 43px;
 }
 
 .buttonContainer {
@@ -55,8 +75,8 @@ body {
 }
 
 .button {
-    /*height: 80px;
-    width: 80px;*/
+    height: 92.5px;
+    /*width: 80px;*/
     flex: 1 0 21%;
     border-style: none;
     border-radius: 10px;
@@ -96,7 +116,7 @@ body {
     width: 100%;
     gap: 10px;
     justify-content: space-around;
-    flex-grow: 1;
+    flex-shrink: 1;
     flex-basis: 0;
 }
 

@@ -20,6 +20,7 @@ const power = document.querySelector('.power');
 const numberButtons = document.querySelectorAll('.number');
 const funcButtons = document.querySelectorAll('.func');
 const allButtons = document.querySelectorAll('.button');
+const deleteButton = document.querySelector('.delete');
 
 function addFunc(num1, num2) {
     return +num1 + +num2;
@@ -49,6 +50,7 @@ var secondNum = '';
 var operation = '';
 
 function typeNum (button) {
+    
     let buttonNum = button.innerText;
     screenNumber = screenNumber.concat(buttonNum)
     display.firstChild.data = screenNumber;
@@ -81,6 +83,10 @@ function equalsFunc (operation) {
         return 1;
     }
     let answer = 123;
+
+    /*if (!isNaN(display.innerText.slice(0, 1))) {
+        display.innerText.slice(0, 1);
+    }*/
     secondNum = display.firstChild.data;
     console.log(secondNum);
     if (operation === '*') {
@@ -104,7 +110,25 @@ function equalsFunc (operation) {
     //display answer
 };
 
+function clearScreen() {
+    upperDisplay.innerText = '|';
+    display.innerText = '|';
+    screenNumber = "";
+    firstNum = "";
+    secondNUm = "";
+    operation = "";
+    answer = null;
+}
 
+function deleteNumber () {
+
+    display.innerText = display.innerText.slice(0, -1);
+
+    if (display.innerText.length == 0) {
+        display.innerText = " ";
+    }
+    screenNumber = display.innerText;
+}
 
 
 numberButtons.forEach(item => item.addEventListener('click', function () {
@@ -118,3 +142,6 @@ funcButtons.forEach(item => item.addEventListener('click', function () {
 equals.addEventListener('click', function () {
     equalsFunc(operation);
 });
+
+clear.addEventListener('click', clearScreen);
+deleteButton.addEventListener('click', deleteNumber);

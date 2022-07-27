@@ -5,10 +5,14 @@
         <title>Calculator</title>
         <link rel="stylesheet" href="./style.css">
     </head>
-    <script src="calculator.js" defer></script>
+    <script src="calctwo.js" defer></script>
     <div class="background">
         <div class="screenContainer">
-            <div class="screen">-</div>
+            
+            <div class="screen">
+                <div class="lowerScreen">123</div>
+                <div class="upperScreen">456</div>
+        </div>
         </div>
         <!--<div class="buttonContainer">-->
             <div class="buttonGrid">
@@ -26,7 +30,7 @@
             <button class="button func add" id="+">add</button>
             <button class="button clear" id="clear">CLR</button>
             <button class="button number"id="zero">0</button>
-            <button class="button decimal outoforder" id=".">.</button>
+            <button class="button number decimal" id=".">.</button>
             <button class="button func subtract"id="-">subtract</button>
 
             
@@ -34,6 +38,7 @@
         <!--</div>-->
         <div class="bottomContainer">
             <button class="button func power outoforder">power</button>
+            <button class="button delete">delete</button>
             <button class="button equals">equals</button>
         </div>
     </div>
