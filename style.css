@@ -144,6 +144,17 @@ body {
     transform: scale(1.05);
 }
 
+.bottomContainer .delete:hover {
+    background-color: rgb(255, 128, 128);
+}
+
+.bottomContainer .equals:hover {
+    background-color: rgb(102, 255, 102);
+}
+
+.buttonGrid .clear:hover {
+    background-color: rgb(51, 153, 255);
+}
 .outoforder {
     filter: grayscale(100%);
     opacity: 25%;
