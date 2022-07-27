@@ -21,6 +21,7 @@ const numberButtons = document.querySelectorAll('.number');
 const funcButtons = document.querySelectorAll('.func');
 const allButtons = document.querySelectorAll('.button');
 const deleteButton = document.querySelector('.delete');
+const wholeCalculator = document.querySelector('.background'); 
 
 function addFunc(num1, num2) {
     return +num1 + +num2;
@@ -79,7 +80,12 @@ function equalsFunc (operation) {
     
     
     if ((upperDisplay.innerText.split(' ').length == 3) || 
-    upperDisplay.innerText.split(' ').length == 1) {
+    upperDisplay.innerText.split(' ').length == 1 ) {
+
+            //upperDisplay.innerText = " ";
+            //display.innerText = " ";
+            // clearScreen();
+
         clearData(upperDisplay);
         upperDisplay.innerText = display.innerText;
         return 1;
@@ -136,6 +142,29 @@ function deleteNumber () {
     screenNumber = display.innerText;
 }
 
+function powerToggle () {
+    const screenContainer = document.querySelector('.screenContainer');
+    const buttonContainer = document.querySelector('.buttonGrid');
+    const bottomContainer = document.querySelector('.bottomContainer');
+
+    screenContainer.classList.toggle('toggle');
+    screenContainer.classList.toggle('off');
+    buttonContainer.classList.toggle('toggle');
+    clear.classList.toggle('toggle');
+    deleteButton.classList.toggle('toggle');
+    equals.classList.toggle('toggle');
+    clear.classList.toggle('toggle');
+
+    clearScreen();
+
+}
+
+//wholeCalculator.classList.add('outoforder');
+//allButtons.forEach((item) => {item.classList.add('toggle');});
+
+
+//power.classList.remove('toggle');
+power.addEventListener('click', powerToggle);
 
 numberButtons.forEach(item => item.addEventListener('click', function () {
     typeNum(item);

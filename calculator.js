@@ -132,6 +132,9 @@ function evaluateArray (equationArray) {
     }
 }
 
+
+
+
 numberButtons.forEach(item => item.addEventListener('click', function () {
     typeNum(item);
 }));
@@ -149,3 +152,8 @@ clear.addEventListener('click', clearScreen);
 
 // Recursively solve the equation typed in?
 
+
+/*const allButtons = querySelectorAll('.button');
+allButtons.forEach(item => item.addEventListener('click', function () {
+    item.style.transform = "translateY(5px);";
+}));*/
