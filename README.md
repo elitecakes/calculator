@@ -1,1 +1,9 @@
 # calculator
+
+Learned plenty from this, got a lot better at dealing with queryselectors in js and also what to tag things and such. One of my original solutions for the calculator evaluation formula was recursive which was kinda cool but my coding isn't neat or organised enough yet for that to work intuitively. THough it was working trying to edit it in order for the function to obey pemdas was a headache as all the functions in my code seemed to call each other and it was a bit spaghetti like.
+
+Oh well had the same issue for my second solution which was a lot simpler but also did end up being quite messy. It was neater than the first though, and I'm kinda learning the importance of actually maintaining clean code, this thing is only 120 lines ish and it was getting confusing.
+
+Either way it took a while especially for such a simple project but even if I didnt learna a whole lot from it I've gotten much more comfortable with DOM manipulation, use of functions eventlisteners etc. So I'd say it was worth the time it took to get it down and iron out the biggest bugs. THough there are a few left i'm fairly certain. You can't press equals multiple times in a row if the screen is clear. I'd be able to fix this if my code relied on variables in a few places rather than just calls to values directly but thats down to my messy code and something I'll get better at.
+
+Looks pretty good, I'd like to learn to animate things as this might make the buttons seem a bit nicer looking and maybe add sounds to the button presses in future. I'm done with it for now but I could come back to it and add a few new features like powers, square roots, the sounds, the animations etc. but in future i might find it easier to just make another project because the css is a bit messy and hardcoded and so is the javascript if I'm being honest. THe CSS could use some cleaning up as well. Ah well. I'm happy with it (for the most part).
