@@ -103,7 +103,7 @@ body {
 
 .func {
     background-color:sandybrown;
-    font-size: 15px;
+    font-size: 30px;
 }
 
 .func:hover:not(.power){
@@ -136,6 +136,7 @@ body {
 
 .power {
     background-color: rgb(255, 77, 77);
+    font-size: 24px;;
 }
 
 .power:hover {
