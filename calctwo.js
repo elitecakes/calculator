@@ -50,7 +50,9 @@ var secondNum = '';
 var operation = '';
 
 function typeNum (button) {
-    
+    if (upperDisplay.innerText.split(' ').length == 3) {
+        clearScreen();
+    }
     let buttonNum = button.innerText;
     screenNumber = screenNumber.concat(buttonNum)
     display.firstChild.data = screenNumber;
@@ -101,18 +103,22 @@ function equalsFunc (operation) {
     if (operation === '-') {
         answer = subtractFunc(firstNum, secondNum);
     }
+
+    if (!Number.isInteger(answer)) {
+        answer = answer.toFixed(10);
+    }
     
     upperDisplay.firstChild.data = upperDisplay.firstChild.data.concat(secondNum);
     display.innerText = answer;
-    //screenNumber = answer;
+    screenNumber = String(answer);
     console.log(answer);
     //clear both screen
     //display answer
 };
 
 function clearScreen() {
-    upperDisplay.innerText = '|';
-    display.innerText = '|';
+    upperDisplay.innerText = ' ';
+    display.innerText = ' ';
     screenNumber = "";
     firstNum = "";
     secondNUm = "";
